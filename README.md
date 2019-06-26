@@ -44,9 +44,11 @@ WestSide Mean - 1251
 
 Through the entire dataset nearly 3000 riders cross the bridge every day.
 
-Next I wanted to see how seasonality came into play. Plotting a 4 week rolling average made it clear that ridership increases in the summer and decreases in the winter.
+Next I wanted to see how seasonality came into play. Plotting a 4 week rolling average made it clear that ridership increases in the summer and decreases in the winter. The lower WestSide crosssings in 2017 and 2018 stuck out as odd.
 
-![alt text](https://i.imgur.com/mU2rsir.png)
+![alt text](https://i.imgur.com/t2S8vpz.png)
 
+How about hourly, When is the most common time to cross the bridge? It's no suprise that commuting hours of 7-9 AM and 4-7 PM are the most commonly traversed. Also important to notice the difference in morning on evengin commutes. The EastSide of the bridge corresponds to Southbound traffic lanes heading into downtown and Northbound for the west. Though Cyclist go in both directions the generally follow traffic patterns.
 
+![alt text](https://i.imgur.com/dqFbusP.png)
 
