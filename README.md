@@ -52,3 +52,23 @@ How about hourly, When is the most common time to cross the bridge? It's no supr
 
 ![alt text](https://i.imgur.com/dqFbusP.png)
 
+# Adding in Weather
+The first source for weather data was the NOAA daily observations. I downloaded files for 8 stations around Seattle then averaged the results together to come up with daily totals for Temperature and rainfall between 1/1/2010 and 5/15/2019. Just how often does it rain in Seattle (greater than .1 inches of rain in a day)?
+
+3422 days in the dataset and 1005 were rain days. Nearly 1 in every 3 days (%33.25) it rains in Seattle!
+
+![alt text](https://i.imgur.com/pISvQ1Y.png)
+
+Do cyclist still cross the bridge in the rain? Yes. Ridership decreases in the winter when it rains and snows more, but cyclist still use the bridge every day. 
+
+Point = Number of Daily Crossings
+Size = Amount of Precipitaiton on the day
+Color = Rain Day true or false
+![alt text](https://i.imgur.com/gUcsVN1.png)
+
+Another view of the same plot
+Point = Daily Max Temp
+Size = Number of Daily Crossings
+Color = Rain Day true or false
+
+![alt text](https://i.imgur.com/bkHmFLI.png)
