@@ -72,3 +72,27 @@ Size = Number of Daily Crossings
 Color = Rain Day true or false
 
 ![alt text](https://i.imgur.com/bkHmFLI.png)
+
+# Daily Weather Regression
+My first regression attempt was to use the NOAA daily observations and see how well a model could predict the total number of daily crossings. Along with Precipitation and temperature I made dummy variables out of Month, Day of Week and Is Rain day.
+![alt text](https://i.imgur.com/y3vsFXn.png)
+
+Through trial and error I settled on a ridge regression with an alpha of 5. Fitting the model gave the following evaluation metrics for each fo 4 possible y values. The baseline was set by taking the average of a given y.
+
+| y               | EastSide | WestSide | Mean_Xing | Total_Xing |
+|-----------------|----------|----------|-----------|------------|
+| R**2            | 0.769    | .811     | .835      | .835       |
+| Prediction_RMSE | 364.218  | 260.782  | 267.515   | 535.031    |
+| Baseline_RMSE   | 759.509  | 600.138  | 658.996   | 1317.993   |
+
+
+To evaluate the accuracy I used a yellowbrick Residual plot. The crossing value is on the X-axis while Y-axis shos the difference from the true value. Since the predictions roughly fall along the X axis and since the errors are normally distributed I belive this to be a well fitted model.
+![alt text](https://i.imgur.com/7WewwI6.png)
+
+
+# Getting down to Hourly Weather Observations
+All the prior data has been based on Daily totals from NOAA. I found two resources to use for hourly WX. The first from open weather map contained fields you would expect (Temp, Precip, Humidity) along with one other that turned out to be fairly important. A textual weather description. For every hour between 10/1/2012 and 6/13/19 (56675 observations) I now had the following descriptions.
+![alt text](https://i.imgur.com/H9MUcYZ.png)
+
+
+
