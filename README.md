@@ -126,3 +126,5 @@ While rain does affect ridership Seattlites aren't very responsive to it. Regard
 
 ![alt text](https://i.imgur.com/xJQoHOo.png)
 
+Strange WX week
+https://www.seattletimes.com/seattle-news/thanksgiving-apple-cup-travel-alert-parade-of-storms-to-bring-rain-wind-mountain-snow/
