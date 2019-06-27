@@ -73,6 +73,11 @@ Color = Rain Day true or false
 
 ![alt text](https://i.imgur.com/bkHmFLI.png)
 
+# Getting down to Hourly Weather Observations
+All the prior data has been based on Daily totals from NOAA. I found two resources to use for hourly WX. The first from open weather map contained fields you would expect (Temp, Precip, Humidity) along with one other that turned out to be fairly important. A textual weather description. For every hour between 10/1/2012 and 6/13/19 (56675 observations) I now had the following descriptions.
+![alt text](https://i.imgur.com/H9MUcYZ.png)
+
+
 # Daily Weather Regression
 My first regression attempt was to use the NOAA daily observations and see how well a model could predict the total number of daily crossings. Along with Precipitation and temperature I made dummy variables out of Month, Day of Week and Is Rain day.
 ![alt text](https://i.imgur.com/y3vsFXn.png)
@@ -90,9 +95,7 @@ To evaluate accuracy I used a yellowbrick Residual plot. The number of predicted
 ![alt text](https://i.imgur.com/x7X2e5W.png)
 
 
-# Getting down to Hourly Weather Observations
-All the prior data has been based on Daily totals from NOAA. I found two resources to use for hourly WX. The first from open weather map contained fields you would expect (Temp, Precip, Humidity) along with one other that turned out to be fairly important. A textual weather description. For every hour between 10/1/2012 and 6/13/19 (56675 observations) I now had the following descriptions.
-![alt text](https://i.imgur.com/H9MUcYZ.png)
+
 
 # Hourly Regression
 On fitting the same Ridge model, now with the hourly weather observations yields the following model coefficients and evaluation metrics
@@ -103,7 +106,18 @@ On fitting the same Ridge model, now with the hourly weather observations yields
 | Prediction_RMSE | 50.371   | 38.885   | 39.755    | 79.511     |
 | Baseline_RMSE   | 85.691   | 65.228   | 69.897    | 139.79     |
 
-![alt text](https://i.imgur.com/MLCUhp8.png)
-![alt text](https://i.imgur.com/jAoRFPI.png)
 
+![alt text](https://i.imgur.com/jAoRFPI.png)
+ coefficient plt (https://i.imgur.com/MLCUhp8.png)
+# So how does rain affect ridership across the bridge?
+
+To answer this I wanted to take a closer look at few specifci days. Since the hourly model didn't perfrom as well (I think it's a little to granular lots of variation by hour) I stuck with the daily model. I chose some semi-arbitrary days for the remainder of the year then created data with varying precipitation amounts.
+
+Merging that fake data in with the actuals from those days gave the following results.
+
+![alt text](https://i.imgur.com/IGAZyJz.png)
+
+While rain does affect ridership Seattlites aren't very responsive to it. Regardless of if it rains or not people still ride to work. Even on the rainiest day of the year, 11/23, they still cross the bridge. I believe both the Daily and hourly models to be well-fitted but since they are linear when some of the powerful variables (coefficent) are at their extremes it generates negative predictions. There still may be a better model than a Ridge regression for this problem, but even a linear model gets pretty close to how the seasonal trends affect ridership across the bridge.
+
+![alt text](https://i.imgur.com/xJQoHOo.png)
 
