@@ -86,13 +86,24 @@ Through trial and error I settled on a ridge regression with an alpha of 5. Fitt
 | Baseline_RMSE   | 759.509  | 600.138  | 658.996   | 1317.993   |
 
 
-To evaluate the accuracy I used a yellowbrick Residual plot. The crossing value is on the X-axis while Y-axis shos the difference from the true value. Since the predictions roughly fall along the X axis and since the errors are normally distributed I belive this to be a well fitted model.
-![alt text](https://i.imgur.com/7WewwI6.png)
+To evaluate accuracy I used a yellowbrick Residual plot. The number of predicted(green) or actual(blue) crossings are on the X-axis while Y-axis shows the difference from the regression line. Since the predictions roughly fall along the X axis and since the errors are normally distributed I belive this to be a well fitted model.
+![alt text](https://i.imgur.com/x7X2e5W.png)
 
 
 # Getting down to Hourly Weather Observations
 All the prior data has been based on Daily totals from NOAA. I found two resources to use for hourly WX. The first from open weather map contained fields you would expect (Temp, Precip, Humidity) along with one other that turned out to be fairly important. A textual weather description. For every hour between 10/1/2012 and 6/13/19 (56675 observations) I now had the following descriptions.
 ![alt text](https://i.imgur.com/H9MUcYZ.png)
 
+# Hourly Regression
+On fitting the same Ridge model, now with the hourly weather observations yields the following model coefficients and evaluation metrics
+
+| y               | EastSide | WestSide | Mean_Xing | Total_Xing |
+|-----------------|----------|----------|-----------|------------|
+| R**2            | .6544    | .645     | .677      | .676       |
+| Prediction_RMSE | 50.371   | 38.885   | 39.755    | 79.511     |
+| Baseline_RMSE   | 85.691   | 65.228   | 69.897    | 139.79     |
+
+![alt text](https://i.imgur.com/MLCUhp8.png)
+![alt text](https://i.imgur.com/jAoRFPI.png)
 
 
