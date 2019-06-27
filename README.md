@@ -62,13 +62,18 @@ The first source for weather data was the NOAA daily observations. I downloaded 
 Do cyclist still cross the bridge in the rain? Yes. Ridership decreases in the winter when it rains and snows more, but cyclist still use the bridge every day. 
 
 Point = Number of Daily Crossings
+
 Size = Amount of Precipitaiton on the day
+
 Color = Rain Day true or false
+
 ![alt text](https://i.imgur.com/gUcsVN1.png)
 
 Another view of the same plot
 Point = Daily Max Temp
+
 Size = Number of Daily Crossings
+
 Color = Rain Day true or false
 
 ![alt text](https://i.imgur.com/bkHmFLI.png)
@@ -108,7 +113,7 @@ On fitting the same Ridge model, now with the hourly weather observations yields
 
 
 ![alt text](https://i.imgur.com/jAoRFPI.png)
- coefficient plt (https://i.imgur.com/MLCUhp8.png)
+
 # So how does rain affect ridership across the bridge?
 
 To answer this I wanted to take a closer look at few specifci days. Since the hourly model didn't perfrom as well (I think it's a little to granular lots of variation by hour) I stuck with the daily model. I chose some semi-arbitrary days for the remainder of the year then created data with varying precipitation amounts.
