@@ -1,3 +1,5 @@
 Data/
 .ipynb_checkpoints
 README.txt
+.idea/
+venv/
